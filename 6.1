@@ -1,0 +1,38 @@
+import React from "react";
+import Teacher from "./components/Teacher";
+
+export default function App() {
+  const teacherData = [
+    {
+      name: "Mr. Sharma",
+      subject: "Mathematics",
+      students: [
+        { name: "Sara Kumari", grade: "A" },
+        { name: "Rahul Singh", grade: "B" },
+        { name: "Aditi Verma", grade: "A+" }
+      ]
+    },
+    {
+      name: "Ms. Gupta",
+      subject: "Science",
+      students: [
+        { name: "Ankit Raj", grade: "A" },
+        { name: "Neha Joshi", grade: "B+" }
+      ]
+    }
+  ];
+
+  return (
+    <div className="p-6 max-w-xl mx-auto">
+      <h1 className="text-2xl font-bold text-center mb-6">Student–Teacher Hierarchy</h1>
+      {teacherData.map((teacher, index) => (
+        <Teacher
+          key={index}
+          name={teacher.name}
+          subject={teacher.subject}
+          students={teacher.students}
+        />
+      ))}
+    </div>
+  );
+}
